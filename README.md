@@ -1,5 +1,3 @@
-# chenab-sar-water-hazard
-Sentinel-1 SAR surface water mapping, DEM terrain-shadow audit, and NASA OPERA DSWx-S1 validation in the Chenab Valley (Google Earth Engine)
 # Sentinel-1 SAR Surface Water Mapping & Terrain-Shadow Audit — Chenab Valley (J&K)
 
 A cloud-based Synthetic Aperture Radar (SAR) remote-sensing workflow in **Google Earth Engine** evaluating surface water dynamics, steep-terrain radar shadow errors, and benchmark validation along the **Chenab River Corridor** (Pul Doda – Baglihar – Ramban – Salal – Akhnoor, Jammu & Kashmir) across the 2025–2026 hydrological cycle.
