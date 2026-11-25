@@ -54,7 +54,7 @@ A cloud-based Synthetic Aperture Radar (SAR) remote-sensing workflow in **Google
 ```text
 chenab-sar-water-hazard/
 ├── scripts/
-│   └── chenab_s1_water_hazard.js       # Reproducible Google Earth Engine script
+│   └── chenab_s1_water_hazard.js       
 ├── outputs/
 │   ├── chenab_sar_shadow_map.png       # Spatial audit map (water vs. removed shadows)
 │   └── chenab_monthly_water_area.png   # 12-month surface water area time series
