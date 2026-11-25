@@ -47,6 +47,17 @@ A cloud-based Synthetic Aperture Radar (SAR) remote-sensing workflow in **Google
 3. **DEM Terrain Correction Audit:** Contrasted raw VV thresholding (`< -16 dB`) against an SRTM 30 m slope mask (`< 15°`) to isolate and quantify steep-terrain shadow artefacts.
 4. **Independent NASA Validation:** Cross-checked monsoon extent and geometric distortion zones against NASA JPL's `OPERA/DSWX/L3_V1/S1` water (`classes 1 & 3`) and layover/shadow (`class 251`) layers.
 
+## Limitations & Error Sources
+* **Fixed Backscatter Threshold (`-16 dB`):** A static global threshold introduces omission errors where wind-roughened reservoir surfaces or turbulent monsoon rapids scatter VV backscatter above `-16 dB`, and commission errors over smooth dry sandbars or paved surfaces.
+* **Hard Slope Cutoff (`< 15°`):** While SRTM slope masking removed 85.1% of steep-terrain radar shadows, a strict `15°` cutoff can also clip genuine water pixels along narrow, steep-walled Chenab canyon riverbanks.
+* **GRD Geometry vs. Full RTC:** `COPERNICUS/S1_GRD` scenes in Earth Engine are orthorectified to $\sigma^0$ without radiometric terrain flattening ($\gamma^0$), and restricting analysis to descending passes leaves west-facing slopes more prone to foreshortening and shadow.
+* **Median vs. Peak Compositing:** Seasonal median compositing suppresses radar speckle effectively but smooths out short-lived flash-flood peaks (unlike NASA OPERA DSWx-S1's maximum-extent union).
+
+## Data Sources & Provenance
+* **Copernicus Sentinel-1 SAR GRD (ESA):** Earth Engine ID `COPERNICUS/S1_GRD` — [GEE Data Catalog](https://developers.google.com/earth-engine/datasets/catalog/COPERNICUS_S1_GRD) *(Accessed: November 2026)*
+* **NASA OPERA Dynamic Surface Water Extent from Sentinel-1 (DSWx-S1) V1 (NASA JPL):** Earth Engine ID `OPERA/DSWX/L3_V1/S1`, DOI: `10.5067/OPDSWS1-L3V1` — [GEE Data Catalog](https://developers.google.com/earth-engine/datasets/catalog/OPERA_DSWX_L3_V1_S1) *(Accessed: November 2026)*
+* **USGS SRTMGL1 30 m Digital Elevation Model (NASA / USGS):** Earth Engine ID `USGS/SRTMGL1_003` *(Accessed: November 2026)*
+
 ---
 
 ## Repository Structure
